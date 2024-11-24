@@ -19,7 +19,7 @@ if [ ! -f "$DOCDIRECTORY/deleted.log" ]; then
   
 fi
 
-# Vemos si existe el fichero de logs de todos los eliminados.
+# Vemos si existe el folder donde almacenaremos los iso
 if [ ! -d "$DOCDIRECTORY/isos/" ]; then
   echo "[INFO] Creando la carpeta isos"
   mkdir "$DOCDIRECTORY/isos"
