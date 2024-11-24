@@ -19,9 +19,17 @@ if [ ! -f "$DOCDIRECTORY/deleted.log" ]; then
   
 fi
 
+# Vemos si existe el fichero de logs de todos los eliminados.
+if [ ! -d "$DOCDIRECTORY/isos/" ]; then
+  echo "[INFO] Creando la carpeta isos"
+  mkdir "$DOCDIRECTORY/isos"
+  chmod 777 "$DOCDIRECTORY/isos"
+  
+fi
+
 for ARCHIVO in "$DIRECTORY"/*; do
   if [[ "$ARCHIVO" =~ \.iso$ ]]; then
-    mv $ARCHIVO "$DOCDIRECTORY"
+    mv $ARCHIVO "$DOCDIRECTORY/isos"
     ((ISOMOVED++))
     continue
   else
@@ -34,6 +42,6 @@ for ARCHIVO in "$DIRECTORY"/*; do
   fi
 done
 
-echo "[INFO] Se movieron $ISOMOVED hacia Documents"
+echo "[INFO] Se movieron $ISOMOVED imagenes ISO hacia Documents/isos"
 echo "[INFO] Se eliminaron $DELETED archivos"
 echo "[INFO] Podes ver que ficheros fueron eliminados en $DOCDIRECTORY"
