@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DOCDIRECTORY=/home/akerman/Documents
-DIRECTORY=/home/akerman/Downloads
+DOCDIRECTORY=$HOME/Documents
+DIRECTORY=$HOME/Downloads
 ISOMOVED=0
 DELETED=0
 
